@@ -4,6 +4,7 @@ const todoList = document.querySelector('#todoList');
 const todoForm = document.querySelector('#createTodo');
 const formCheck = document.querySelector('#todoCompleted');
 const formInput = document.querySelector('#todoItem');
+const errorMsg = document.querySelector('#errorMsg');
 
 /* END global variables */
 
@@ -49,6 +50,23 @@ const addTodo = function (todo) {
   todoList.appendChild(item);
 };
 
+const validateInput = function (text) {
+  if (text.length > 0 && text.length <= 20) {
+    return true;
+  }
+  return false;
+};
+
+const invalidInput = function (isInvalid) {
+  if (isInvalid) {
+    formInput.classList.add('is-invalid');
+    errorMsg.classList.remove('hidden');
+  } else {
+    formInput.classList.remove('is-invalid');
+    errorMsg.classList.add('hidden');
+  }
+};
+
 /* END functions */
 
 // Create first todo
@@ -57,10 +75,16 @@ createTodos();
 /* START events */
 todoForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  const newTodo = {
-    description: formInput.value,
-    done: formCheck.checked,
-  };
-  addTodo(newTodo);
+  if (validateInput(formInput.value)) {
+    invalidInput(false);
+    const newTodo = {
+      description: formInput.value,
+      done: formCheck.checked,
+    };
+    addTodo(newTodo);
+    formInput.value = '';
+  } else {
+    invalidInput(true);
+  }
 });
 /* END events */
