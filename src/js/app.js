@@ -5,6 +5,7 @@ const todoForm = document.querySelector('#createTodo');
 const formCheck = document.querySelector('#todoCompleted');
 const formInput = document.querySelector('#todoItem');
 const errorMsg = document.querySelector('#errorMsg');
+const spinner = document.querySelector('.spinner-border');
 
 /* END global variables */
 
@@ -88,3 +89,22 @@ todoForm.addEventListener('submit', function (e) {
   }
 });
 /* END events */
+
+/* START http request */
+fetch('https://restcountries.eu/rest/v2/name/Mexico')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    spinner.classList.add('hidden');
+    const img = document.querySelector('#car-img');
+    img.src = data[0].flag;
+    const title = document.querySelector('.card-title');
+    console.log(data[0]);
+    title.textContent = data[0].name;
+    const subtitle = document.querySelector('.card-subtitle');
+    subtitle.textContent = data[0].capital;
+    const body = document.querySelector('.card-text');
+  });
+
+/* END httpm request */
