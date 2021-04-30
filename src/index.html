@@ -27,60 +27,14 @@
       <!-- Todo List -->
       <div class="row align-items-start">
         <div class="col-3 mt-5">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <input
-                class="form-check-input me-1"
-                type="checkbox"
-                value=""
-                aria-label="..."
-              />
-              First checkbox
-            </li>
-            <li class="list-group-item">
-              <input
-                class="form-check-input me-1"
-                type="checkbox"
-                value=""
-                aria-label="..."
-              />
-              Second checkbox
-            </li>
-            <li class="list-group-item">
-              <input
-                class="form-check-input me-1"
-                type="checkbox"
-                value=""
-                aria-label="..."
-              />
-              Third checkbox
-            </li>
-            <li class="list-group-item">
-              <input
-                class="form-check-input me-1"
-                type="checkbox"
-                value=""
-                aria-label="..."
-              />
-              Fourth checkbox
-            </li>
-            <li class="list-group-item">
-              <input
-                class="form-check-input me-1"
-                type="checkbox"
-                value=""
-                aria-label="..."
-              />
-              Fifth checkbox
-            </li>
-          </ul>
+          <ul id="todoList" class="list-group"></ul>
         </div>
         <div class="col mt-5">
           <!-- create todo -->
           <form>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label"
-                >Email address</label
+                >Tarea a realizar</label
               >
               <input
                 type="email"
@@ -89,18 +43,8 @@
                 aria-describedby="emailHelp"
               />
               <div id="emailHelp" class="form-text">
-                We'll never share your email with anyone else.
+                Ej. Sacar a pasear al perro...
               </div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
             </div>
             <div class="mb-3 form-check">
               <input
@@ -109,10 +53,10 @@
                 id="exampleCheck1"
               />
               <label class="form-check-label" for="exampleCheck1"
-                >Check me out</label
+                >Completada</label
               >
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Crear</button>
           </form>
         </div>
       </div>
