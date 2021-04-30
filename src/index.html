@@ -32,15 +32,13 @@
         </div>
         <div class="col mt-5">
           <!-- create todo -->
-          <form>
+          <form id="createTodo">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label"
-                >Tarea a realizar</label
-              >
+              <label for="todoItem" class="form-label">Tarea a realizar</label>
               <input
-                type="email"
+                type="text"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="todoItem"
                 aria-describedby="emailHelp"
               />
               <div id="emailHelp" class="form-text">
@@ -51,7 +49,7 @@
               <input
                 type="checkbox"
                 class="form-check-input"
-                id="exampleCheck1"
+                id="todoCompleted"
               />
               <label class="form-check-label" for="exampleCheck1"
                 >Completada</label
